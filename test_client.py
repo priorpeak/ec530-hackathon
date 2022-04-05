@@ -30,22 +30,21 @@ binds the server to an entered IP address and at the
 specified port number.
 The client must be aware of these parameters
 """
-server.bind((IP_address, 8081))
+server.bind((IP_address, 8082))
 """
 listens for 100 active connections. This number can be
 increased as per convenience.
 """
 server.listen(100)
+
 print("IN SLEEP")
 time.sleep(5)
-
-
 # Client
 server2 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server2.connect((IP_address, 8082))
+server2.connect((IP_address, 8081))
+
 
 print("OUT OF SLEEP")
-
  
 
  
@@ -82,7 +81,7 @@ def clientthread(conn, addr):
                         sys.stdout.write("<You>")
                         sys.stdout.write(client_message)
                         sys.stdout.flush()
-                server_message = conn.recv(2048)
+                client_message = conn.recv(2048)
                 if server_message:
  
                     """prints the server_message and address of the
