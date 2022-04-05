@@ -53,7 +53,9 @@ def clientthread(conn, addr):
                     """prints the message and address of the
                     user who just sent the message on the server
                     terminal"""
-                    print ("<" + addr[0] + "> " + message)
+                    print("<" + addr[0] + ">")
+                    print(message.decode("utf-8"))
+                    # print ("<" + addr[0] + "> " + message)
  
                     # Calls broadcast function to send message to all
                     message_to_send = "<" + addr[0] + "> " + message
