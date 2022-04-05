@@ -32,7 +32,7 @@ while True:
 			print (message)
 		else:
 			message = sys.stdin.readline()
-			server.send(message)
+			server.send(message.encode('utf-8'))
 			sys.stdout.write("<You>")
 			sys.stdout.write(message)
 			sys.stdout.flush()
