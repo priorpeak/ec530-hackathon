@@ -81,7 +81,7 @@ def clientthread(conn, addr):
                         sys.stdout.write("<You>")
                         sys.stdout.write(client_message)
                         sys.stdout.flush()
-                client_message = conn.recv(2048)
+                server_message = conn.recv(2048)
                 if server_message:
  
                     """prints the server_message and address of the
